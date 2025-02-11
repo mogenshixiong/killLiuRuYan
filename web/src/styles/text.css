@@ -1,0 +1,12 @@
+.mg-text-gold {
+  color: #d0aa00;
+  font-weight: bold;
+  font-family: 'Microsoft YaHei';
+  user-select: none;
+  background: -webkit-linear-gradient(270deg, #d2b30e 0%, #ff7757 100%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

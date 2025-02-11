@@ -1,0 +1,74 @@
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+// import { useUserStore } from '@/stores/userStore'
+
+// const user = useUserStore()
+
+onMounted(() => {
+  // console.log(user.isLogin)
+})
+
+const list = ref<number[]>([])
+const loading = ref(false)
+const finished = ref(false)
+const refreshing = ref(false)
+
+const onLoad = () => {
+  setTimeout(() => {
+    if (refreshing.value) {
+      list.value = []
+      refreshing.value = false
+    }
+
+    for (let i = 0; i < 10; i++) {
+      list.value.push(list.value.length + 1)
+    }
+    loading.value = false
+
+    if (list.value.length >= 40) {
+      finished.value = true
+    }
+  }, 1)
+}
+
+const onRefresh = () => {
+  // 清空列表数据
+  finished.value = false
+
+  // 重新加载数据
+  // 将 loading 设置为 true，表示处于加载状态
+  loading.value = true
+  onLoad()
+}
+
+const value1 = ref(0)
+const value2 = ref('a')
+const option1 = [
+  { text: '全部商品', value: 0 },
+  { text: '新款商品', value: 1 },
+  { text: '活动商品', value: 2 }
+]
+const option2 = [
+  { text: '默认排序', value: 'a' },
+  { text: '好评排序', value: 'b' },
+  { text: '销量排序', value: 'c' }
+]
+</script>
+<template>
+  <van-dropdown-menu>
+    <van-dropdown-item v-model="value1" :options="option1" />
+    <van-dropdown-item v-model="value2" :options="option2" />
+  </van-dropdown-menu>
+  <!-- https://vant-contrib.gitee.io/vant/#/zh-CN/list -->
+  <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+    <van-list
+      v-model:loading="loading"
+      :finished="finished"
+      finished-text="没有更多了"
+      @load="onLoad"
+    >
+      <van-cell v-for="item in list" :key="item" :title="item" />
+    </van-list>
+  </van-pull-refresh>
+  <van-back-top right="30px" bottom="80px" immediate />
+</template>

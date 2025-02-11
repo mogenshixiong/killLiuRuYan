@@ -1,0 +1,11 @@
+.vscode
+node_modules
+dist
+vite.config.ts.timestamp-*.mjs
+
+vendor
+vendor/**
+logs
+logs/**
+reStart.sh
+__debug*.exe

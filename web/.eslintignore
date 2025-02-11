@@ -1,0 +1,7 @@
+*.json
+*.html
+deploy.config.js
+public
+dist
+node_modules
+backup

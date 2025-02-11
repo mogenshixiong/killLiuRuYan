@@ -1,0 +1,159 @@
+/* 各职业颜色 */
+/* 战士 */
+.cc-Warrior {
+  color: #c59a6c;
+}
+/* 圣骑士 */
+.cc-Paladin {
+  color: #f38bb9;
+}
+/* 猎人 */
+.cc-Hunter {
+  color: #a9d271;
+}
+/* 潜行者 */
+.cc-Rogue {
+  color: #fef367;
+}
+/* 牧师 */
+.cc-Priest {
+  color: #fefefe;
+}
+/* 死亡骑士 */
+.cc-DeathKnight {
+  color: #c31d39;
+}
+/* 萨满祭司 */
+.cc-Shaman {
+  color: #006fdc;
+}
+/* 法师 */
+.cc-Mage {
+  color: #3ec5e9;
+}
+/* 术士 */
+.cc-Warlock {
+  color: #8686ec;
+}
+/* 武僧 */
+.cc-Monk {
+  color: #00fe95;
+}
+/* 德鲁伊 */
+.cc-Druid {
+  color: #fe7b09;
+}
+/* 恶魔猎手 */
+.cc-DemonHunter {
+  color: #a22fc8;
+}
+/* 唤魔师 */
+.cc-Evoker {
+  color: #33937f;
+}
+/* 悄悄话 */
+.text-whisper {
+  color: #f8b0de;
+}
+.cc-text1 {
+  color: #ebdec2;
+}
+/* 装备颜色 */
+/* 优秀 */
+.qc-uncommon {
+  color: #27bf13;
+}
+/* 精良 */
+.qc-rare {
+  color: #0070ff;
+}
+/* 史诗 */
+.qc-epic {
+  color: #a335ee;
+}
+/* 传说 */
+.qc-legendary {
+  color: #ff8000;
+}
+/* 神器 */
+.qc-artifact {
+  color: #bfa760;
+}
+/* 附魔属性 */
+.qc-enchant {
+  color: #e6bb00;
+}
+
+/* 文字：紫色 */
+.text-purple {
+  color: blueviolet;
+}
+
+/* 文字：粉色 */
+.text-pink {
+  color: #cb9793;
+}
+
+/* 纯金色文字 */
+.mg-text-yellow1 {
+  color: #f8b700;
+}
+/* 纯金色文字 */
+.mg-text-yellow3 {
+  color: #f0c328;
+}
+/* 金色渐变色 */
+.mg-text-yellow2 {
+  background: linear-gradient(90deg, #ffa800 0%, #ff8a00 119.41%), rgba(255, 255, 255, 0.5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 提示文字颜色 */
+.mg-text-tips1 {
+  color: #ffffff80;
+}
+/* 蓝色文字 */
+.mg-text-blue1 {
+  color: #148eff;
+}
+.mg-text-blue2 {
+  color: #0273cf;
+}
+/* border渐变+bg透明 */
+.mg-bg1 {
+  background: rgba(0, 0, 0, 0.3);
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(#ffa800, #ff8a00) 1;
+}
+.mg-bg2 {
+  background: rgba(249, 65, 25, 0.7);
+}
+/* 棕色背景色 */
+.mg-bg-color1 {
+  background-color: rgba(34, 13, 11, 0.8);
+}
+/* 橘红色按钮 */
+.mg-blz-button1 {
+  background: linear-gradient(180deg, #aa2409, #761500 100%);
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(#f94119, #f83c00, #f94119) 1;
+}
+.mg-blz-button1:hover {
+  background: rgba(249, 65, 25, 0.7);
+}
+/* 金色按钮 */
+.mg-blz-button2 {
+  color: #f8b700;
+  background: rgba(0, 0, 0, 0.3);
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(#ffa800, #ff8a00) 1;
+}
+.mg-blz-button2:hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%),
+    rgba(255, 168, 0, 0.2);
+}

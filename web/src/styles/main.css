@@ -1,0 +1,12 @@
+@import './color.css';
+@import './tailwind.css';
+@import './text.css';
+
+/* 全局修改vant样式 */
+.van-back-top {
+  border: 2px solid #ffd100;
+}
+/* 隐藏vue开发者工具，需要的时候自定打开 */
+#__vue-devtools-container__ {
+  display: none !important;
+}

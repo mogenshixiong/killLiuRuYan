@@ -1,0 +1,32 @@
+[data-theme='dark'].aplayer {
+  background: rgba(0, 0, 0, 0.8);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+  box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.07),
+    0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: normal;
+  position: relative;
+}
+[data-theme='dark'].aplayer .aplayer-list ol li.aplayer-list-light {
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffd100;
+}
+[data-theme='dark'].aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-author {
+  color: #ffd100;
+}
+[data-theme='dark'].aplayer .aplayer-lrc p {
+  color: #ffd100;
+}
+[data-theme='dark'].aplayer .aplayer-lrc:before {
+  background: unset !important;
+}
+[data-theme='dark'].aplayer .aplayer-lrc:after {
+  background: unset !important;
+}
