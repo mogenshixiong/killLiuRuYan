@@ -1,0 +1,6 @@
+*.json
+*.html
+public/*
+dist/*
+node_modules/*
+doc/*

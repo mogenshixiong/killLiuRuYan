@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Plot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    canvas {
+      border: 1px solid #000;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="plotCanvas" width="800" height="600"></canvas>
+
+  <script>
+    // 获取 canvas 和上下文
+    const canvas = document.getElementById('plotCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 定义函数
+    function foodLevelUpNeedWood(l) {
+      return 60 * l * l - 60 * l + 120;
+    }
+
+    // 绘制函数图像
+    function plotFunction() {
+      const width = canvas.width;
+      const height = canvas.height;
+      const padding = 60; // 边距
+      const rangeL = { min: 1, max: 100 }; // l 的范围
+      const rangeY = { min: 0, max: foodLevelUpNeedWood(rangeL.max) }; // y 的范围
+
+      // 计算比例尺
+      const scaleX = (width - 2 * padding) / (rangeL.max - rangeL.min); // x 轴比例尺
+      const scaleY = (height - 2 * padding) / (rangeY.max - rangeY.min); // y 轴比例尺
+
+      // 清空画布
+      ctx.clearRect(0, 0, width, height);
+
+      // 绘制坐标轴
+      ctx.beginPath();
+      ctx.moveTo(padding, height - padding);
+      ctx.lineTo(width - padding, height - padding);
+      ctx.moveTo(padding, height - padding);
+      ctx.lineTo(padding, padding);
+      ctx.strokeStyle = '#000';
+      ctx.stroke();
+
+      // 绘制 x 轴刻度标签
+      ctx.font = '12px Arial';
+      ctx.fillStyle = '#000';
+      for (let i = rangeL.min; i <= rangeL.max; i += 10) {
+        const x = padding + (i - rangeL.min) * scaleX;
+        ctx.fillText(i, x, height - padding + 20);
+      }
+
+      // 绘制 y 轴刻度标签
+      for (let i = rangeY.min; i <= rangeY.max; i += 10000) {
+        const y = height - padding - (i - rangeY.min) * scaleY;
+        ctx.fillText(i.toLocaleString(), 10, y);
+      }
+
+      // 绘制函数曲线
+      ctx.beginPath();
+      ctx.strokeStyle = 'blue';
+      for (let l = rangeL.min; l <= rangeL.max; l += 0.1) {
+        const x = padding + (l - rangeL.min) * scaleX;
+        const y = height - padding - (foodLevelUpNeedWood(l) - rangeY.min) * scaleY;
+        if (l === rangeL.min) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+
+    // 调用绘制函数
+    plotFunction();
+  </script>
+</body>
+
+</html>
